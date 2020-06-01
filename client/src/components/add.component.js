@@ -4,8 +4,14 @@ class AddTodo extends Component {
     render() {
         return (
             <div>
-                this is the add component
-            </div>
+            <form>
+                <div className="form-group">
+                
+                <input type="text" className="form-control"  placeholder="Add To-do" />
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+        </div>
         )
     }
 }

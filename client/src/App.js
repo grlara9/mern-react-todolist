@@ -1,11 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import AddTodo from './components/add.component'
 
 function App() {
   return (
-    <div className="App">
-      hello
+    <div className="container">
+      <AddTodo />
+      
     </div>
   );
 }
