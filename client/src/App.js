@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import axios from 'axios'
 import AddTodo from './components/add.component'
+import Todo from './components/todos.component'
 
 class App extends Component {
   constructor(props){
@@ -12,11 +13,15 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    axios.get('http://localhost:5000/todo')
-    .then((response) => this.setState({
+    axios.get('http://localhost:5000/todo/')
+    .then((response) => {
+    this.setState({
       todos: response.data
     })
-    )
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
   }
 
   delete = (id) => {
@@ -24,14 +29,14 @@ class App extends Component {
     .then(promise => console.log(promise));
 
     this.setState({
-      blogs: this.state.blogs.filter(blog => blog._id ==! id)
+      todos: this.state.blogs.filter(todo => todo._id ===! id)
     })
   }
   render(){
   return (
     <div className="container">
       <AddTodo />
-      
+      <Todo todos={this.state.todos} delete={this.delete}/>
     </div>
   );
 }

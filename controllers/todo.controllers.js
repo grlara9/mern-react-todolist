@@ -22,5 +22,11 @@ router.post("/add", (req, res)=> {
 
 })
 
+router.delete("/:id", (req, res)=>{
+    Todo.findByIdAndDelete(req.params.id)
+    .then(()=>res.json("Task Done"))
+    .catch(err=>res.status(400).json("Error: " + err))
+})
+
 
 module.exports = router
