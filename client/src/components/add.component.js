@@ -29,17 +29,16 @@ class AddTodo extends Component {
         })
     }
 
-    render() {
-        return (
-            <div>
+render() {
+    return (
+        <div>
             <form onClick={this.onSubmit}>
                 <div className="form-group">
-                
                 <input type="text" className="form-control"  
-                name="task"
-                value={this.state.task}
-                onChange={this.onchange}
-                placeholder="Add To-do" />
+                    name="task"
+                    value={this.state.task}
+                    onChange={this.onchange}
+                    placeholder="Add To-do" />
                 </div>
                 <button type="submit" >Submit</button>
             </form>

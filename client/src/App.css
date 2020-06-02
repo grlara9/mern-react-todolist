@@ -29,3 +29,9 @@ form button {
 form button:hover{
   color:white;
 }
+
+.todos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
