@@ -17,7 +17,7 @@ form {
 
 form input, form button {
   padding: 1px 10px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: white;
 }
 form button {
@@ -34,4 +34,17 @@ form button:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+  
+}
+
+.list-items{
+  min-width: 30%;
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 5px;
 }

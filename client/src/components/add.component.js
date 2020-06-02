@@ -21,7 +21,7 @@ class AddTodo extends Component {
             task: this.state.task,
             completed: false
         }
-        axios.post('http://localhost:5000/todo/add', todo )
+        axios.post('http://localhost:5000/todo/add/', todo )
         .then(res => console.log("this is the dataa:" + res.data))
 
         this.setState({
