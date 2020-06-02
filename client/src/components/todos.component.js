@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
+import TodoItem from './todo-item.component'
 
-const TodoItem = props =>(
-    <div>
-        {props.todo.task}
-    </div>
-)
 class Todo extends Component {
 
    
     render() {
        
           return this.props.todos.map((todo)=>(
-           <TodoItem key={todo._id} todo={todo} delete={this.delete} />
+           <TodoItem key={todo._id} todo={todo} delete={this.props.delete} />
           ))
         
     }

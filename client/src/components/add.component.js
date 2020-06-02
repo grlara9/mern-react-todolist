@@ -41,7 +41,7 @@ class AddTodo extends Component {
                 onChange={this.onchange}
                 placeholder="Add To-do" />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" >Submit</button>
             </form>
         </div>
         )
