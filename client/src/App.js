@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios'
 import AddTodo from './components/add.component'
 import Todo from './components/todos.component'
+import Header from './components/header.component'
 
 class App extends Component {
   constructor(props){
@@ -35,8 +36,9 @@ class App extends Component {
   render(){
   return (
     <div className="container">
-      <AddTodo />
+      <Header num={this.state.todos.length} />
       <Todo todos={this.state.todos} delete={this.delete}/>
+      <AddTodo />
     </div>
   );
 }

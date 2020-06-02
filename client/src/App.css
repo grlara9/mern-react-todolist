@@ -48,3 +48,12 @@ form button:hover{
   align-items: center;
   padding: 2px 5px;
 }
+.card-header{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.card-header-title{
+  color:white;
+}
