@@ -18,6 +18,15 @@ class App extends Component {
     })
     )
   }
+
+  delete = (id) => {
+    axios.delete('http://localhost:5000/todo/'+id)
+    .then(promise => console.log(promise));
+
+    this.setState({
+      blogs: this.state.blogs.filter(blog => blog._id ==! id)
+    })
+  }
   render(){
   return (
     <div className="container">
