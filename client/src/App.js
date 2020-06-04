@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import axios from 'axios'
 import AddTodo from './components/add.component'
 import Todo from './components/todos.component'
 import Header from './components/header.component'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 class App extends Component {
   constructor(props){
@@ -32,15 +33,24 @@ class App extends Component {
     this.setState({
       todos: this.state.blogs.filter(todo => todo._id ===! id)
     })
+    window.location.reload();
   }
   render(){
   return (
+    <Router>
+
     <div className="container">
       <Header num={this.state.todos.length} />
+      <Route exact path="/" render={props=> (
+        <React.Fragment>
+
       <Todo todos={this.state.todos} delete={this.delete}/>
       <AddTodo />
+        </React.Fragment>
+      )} />
     </div>
-  );
+      </Router>
+  )
 }
 }
 

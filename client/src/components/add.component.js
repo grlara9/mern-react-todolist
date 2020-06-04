@@ -22,11 +22,18 @@ class AddTodo extends Component {
             completed: false
         }
         axios.post('http://localhost:5000/todo/add', todo )
-        .then(res => console.log("this is the dataa:" + res.data))
-
+        .then(res => 
+            this.setState({
+                 todos: [...this.state.task, res.data] 
+            })
+        )
+        
         this.setState({
             task: ''
+            
         })
+        this.props.location("/")
+       
     }
 
 render() {
