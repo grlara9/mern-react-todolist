@@ -21,6 +21,9 @@ const todoController = require("./controllers/todo.controllers")
 
 app.use("/todo", todoController)
 
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'))
+}
 app.listen(PORT, ()=>{
     console.log("Listening on PORT: " + PORT);
 })
