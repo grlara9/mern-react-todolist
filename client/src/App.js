@@ -20,7 +20,9 @@ class App extends Component {
     this.setState({
       todos: response.data
     })
+    
   })
+  
   .catch((error)=>{
     console.log(error)
   })
@@ -31,9 +33,9 @@ class App extends Component {
     .then(promise => console.log(promise));
 
     this.setState({
-      todos: this.state.blogs.filter(todo => todo._id ===! id)
+      todos: this.state.todos.filter(todo => todo._id ===! id)
     })
-    window.location.reload();
+    
   }
   render(){
   return (

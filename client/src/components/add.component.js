@@ -18,27 +18,18 @@ class AddTodo extends Component {
         e.preventDefault()
 
         const todo ={
-            task: this.state.task,
-            completed: false
-        }
-        axios.post('http://localhost:5000/todo/add', todo )
-        .then(res => 
+            task: this.state.task
+         }
+        axios.post('http://localhost:5000/todo/add',todo)
+        .then(res =>console.log(res.data))
             this.setState({
-                 todos: [...this.state.task, res.data] 
+                task: ''
             })
-        )
-        
-        this.setState({
-            task: ''
-            
-        })
-        this.props.location("/")
-       
-    }
+        }
 
 render() {
     return (
-        <div>
+        
             <form onClick={this.onSubmit}>
                 <div className="form-group">
                 <input type="text" className="form-control"  
@@ -49,7 +40,7 @@ render() {
                 </div>
                 <button type="submit" >Submit</button>
             </form>
-        </div>
+        
         )
     }
 }

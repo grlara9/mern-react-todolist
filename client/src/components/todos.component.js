@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
-import TodoItem from './todo-item.component'
+
+
+const TodoItem = props =>(
+    <div className="list-items">
+        {props.todo.task} <a href="/"><button onClick={() => { props.delete(props.todo._id) }}>x</button></a>
+    </div>
+)
 
 class Todo extends Component {
+
+
 todoList =() =>{
     
     return this.props.todos.map((todo)=>(
