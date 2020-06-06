@@ -1,10 +1,12 @@
 import React from 'react'
 
 const Header = props =>(
-    <div className='card-header'>
-    <h1 className='card-header-title'>
+    <div className="header">
+      
+    <h1>
       You have {props.num} Todos
     </h1>
-  </div>
+    </div>
+  
 )
 export default Header;
