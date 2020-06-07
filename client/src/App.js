@@ -37,6 +37,20 @@ class App extends Component {
     })
     )
   }
+
+  add = (task) =>{
+    
+    const todo ={
+      task
+    }
+  axios.post('http://localhost:5000/todo/add', todo)
+  
+  .then(response => {
+    this.setState({
+      todos: [...this.state.todos, response.data]
+    })
+  })
+  } 
   render(){
   return (
     <Router>
@@ -47,7 +61,7 @@ class App extends Component {
         <React.Fragment>
 
       <Todo todos={this.state.todos} delete={this.delete}/>
-      <AddTodo todos={this.state.todos}/>
+      <AddTodo add={this.add}/>
         </React.Fragment>
       )} />
     </div>

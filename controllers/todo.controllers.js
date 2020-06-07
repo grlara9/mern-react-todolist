@@ -9,10 +9,10 @@ router.get("/", (req, res)=> {
 })
 
 router.post("/add", (req, res)=> {
-   
+    const {task } = req.body
 
     const newTask = new Todo({
-        task: req.body.task
+        task
      }); 
 
     newTask.save()

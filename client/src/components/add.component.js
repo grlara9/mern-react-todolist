@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 class AddTodo extends Component {
     constructor(props){
@@ -8,6 +7,7 @@ class AddTodo extends Component {
             task:''
         }
     }
+    
     onchange =(e)=>{
         const {name, value}=e.target;
         this.setState({
@@ -16,17 +16,9 @@ class AddTodo extends Component {
     }
     onSubmit =(e) => {
         e.preventDefault()
-
-        const todo ={
-            task:this.state.task
-         }
-        axios.post('http://localhost:5000/todo/add',todo)
-        .then(res =>
-            this.setState({
-                task:''
-            })
-           
-        )} 
+        this.props.add(this.state.task);
+            this.setState({task:''})
+        } 
         
 render() {
     return (
