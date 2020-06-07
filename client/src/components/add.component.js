@@ -9,28 +9,29 @@ class AddTodo extends Component {
         }
     }
     onchange =(e)=>{
-        const {name, value} = e.target;
+        const {name, value}=e.target;
         this.setState({
-            [name]: value
+            [name]:value
         })
     }
     onSubmit =(e) => {
         e.preventDefault()
 
         const todo ={
-            task: this.state.task
+            task:this.state.task
          }
         axios.post('http://localhost:5000/todo/add',todo)
-        .then(res =>console.log(res.data))
+        .then(res =>
             this.setState({
-                task: ''
+                task:''
             })
-        }
-
+           
+        )} 
+        
 render() {
     return (
         
-            <form onClick={this.onSubmit}>
+            <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                 <input type="text" className="form-control"  
                     name="task"
@@ -38,7 +39,7 @@ render() {
                     onChange={this.onchange}
                     placeholder="Add To-do" />
                 </div>
-                <button type="submit" >Submit</button>
+                <button type="submit">Submit</button>
             </form>
         
         )
