@@ -25,7 +25,7 @@ render() {
         
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
-                <input type="text" className="form-control"  
+                <input type="text"  
                     name="task"
                     value={this.state.task}
                     onChange={this.onchange}
