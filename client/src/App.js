@@ -11,7 +11,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      todos:[]
+      todos:[],
+      task:''
+
     }
   }
   componentDidMount(){
@@ -37,21 +39,30 @@ class App extends Component {
     })
     )
   }
-
-  add = (task) =>{
-    
-    const todo ={
-      task
-    }
-  axios.post('http://localhost:5000/todo/add', todo)
-  
-  .then(response => {
+  onchange =(value)=>{
     this.setState({
-      todos: [...this.state.todos, response.data]
+      task:value
     })
-  })
-  window.location.reload();
-  } 
+}
+onSubmit =(e) => {
+    e.preventDefault()
+const task = this.state.task;
+
+        const todo ={
+          task
+        }
+      axios.post('http://localhost:5000/todo/add', todo)
+      
+      .then(response => {
+        this.setState({
+          todos: [...this.state.todos, response.data]
+        })
+      })
+      this.setState({task:''})
+      window.location.reload();
+      } 
+
+
   render(){
   return (
     <Router>
@@ -62,7 +73,7 @@ class App extends Component {
         <React.Fragment>
 
       <Todo todos={this.state.todos} delete={this.delete}/>
-      <AddTodo add={this.add}/>
+      <AddTodo onChange={this.onchange} onSubmit={this.onSubmit}/>
         </React.Fragment>
       )} />
     </div>
