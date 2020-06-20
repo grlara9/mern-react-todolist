@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 
- class TodoItem extends Component {
+const TodoItem = (props)=> {
    
   
   
-  render() {
-    return (
-      <React.Fragment>
+  
+  return (
+    <React.Fragment>
 
-      <div className="list-items">
-        {this.props.todo.task}
+    <div className="list-items">
+      {props.todo.task}
+    </div>
+      <div className="delete-button">
+
+      <a href="/"><button onClick={() => { props.delete(props.todo._id) }}>x</button></a>
       </div>
-        <div className="delete-button">
-
-        <a href="/"><button onClick={() => { this.props.delete(this.props.todo._id) }}>x</button></a>
-        </div>
-      </React.Fragment>
-    );
-  }
+    </React.Fragment>
+  );
 }
+
 export default TodoItem;
