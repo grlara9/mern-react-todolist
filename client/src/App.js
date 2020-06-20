@@ -50,6 +50,7 @@ class App extends Component {
       todos: [...this.state.todos, response.data]
     })
   })
+  window.location.reload();
   } 
   render(){
   return (
