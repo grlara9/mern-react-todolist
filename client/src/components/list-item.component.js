@@ -2,10 +2,7 @@ import React, { Component } from "react";
 
 const TodoItem = (props)=> {
    
-  
-  
-  
-  return (
+return (
     <React.Fragment>
 
     <div className="list-items">

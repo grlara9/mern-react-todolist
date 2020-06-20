@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
 import TodoItem from './list-item.component'
 
-class Todo extends Component {
 
+const Todo =(props)=> {
 
-
-   
-render() {
-    return this.props.todos.map(todo=>(
+    return props.todos.map(todo=>(
         <div className="todos">
-            <TodoItem key={todo._id} todo={todo} delete={this.props.delete} />
+            <TodoItem key={todo._id} todo={todo} delete={props.delete} />
         </div>
     ))
 }
-}
+
 export default Todo
