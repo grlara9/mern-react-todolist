@@ -9,25 +9,23 @@ import './App.css';
 
 class App extends Component {
   constructor(props){
-    super(props);
+    super();
     this.state={
       todos:[],
       task:''
 
     }
   }
-  componentDidMount(){
-    axios.get('http://localhost:5000/todo/')
+componentDidMount(){
+  axios.get('http://localhost:5000/todo/')
     .then((response) => {
-    this.setState({
-      todos: response.data
+      this.setState({
+        todos: response.data
+      })
     })
-    
-  })
-  
-  .catch((error)=>{
-    console.log(error)
-  })
+    .catch((error)=>{
+      console.log(error)
+    })
   }
 
   delete = (id) => {

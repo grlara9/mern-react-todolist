@@ -9,10 +9,10 @@ body {
 }
 
 .container{
-  min-height: 500px;
-  width:400px;
-  margin: 40px auto;
+  min-height:auto;
+  margin: 40% auto;
   background: #839496;
+ 
 }
 form {
   min-height: 20vh;
@@ -24,18 +24,17 @@ form {
 form input{
   border: none;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 12px;
+  margin-right: 8px;
   
 }
 form button {
   background: #c09b26;
   color: #fff;
-  
   padding: 10px;
-  
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 form button:hover{
