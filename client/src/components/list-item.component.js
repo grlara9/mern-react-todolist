@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-
+import React from "react";
+import BackspaceTwoToneIcon from '@material-ui/icons/BackspaceTwoTone';
 const TodoItem = (props)=> {
    
 return (
@@ -10,7 +10,7 @@ return (
     </div>
       <div className="delete-button">
 
-      <a href="/"><button onClick={() => { props.delete(props.todo._id) }}>x</button></a>
+      <a href="/"><button onClick={() => { props.delete(props.todo._id) }}> <BackspaceTwoToneIcon />  </button></a>
       </div>
     </React.Fragment>
   );
