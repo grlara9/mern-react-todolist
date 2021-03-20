@@ -67,11 +67,11 @@ const task = this.state.task;
 
     <div className="container">
       <Header num={this.state.todos.length} />
+      <AddTodo onChange={this.onchange} onSubmit={this.onSubmit}/>
       <Route exact path="/" render={props=> (
         <React.Fragment>
 
       <Todo todos={this.state.todos} delete={this.delete}/>
-      <AddTodo onChange={this.onchange} onSubmit={this.onSubmit}/>
         </React.Fragment>
       )} />
     </div>
